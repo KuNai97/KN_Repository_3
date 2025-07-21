@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>测试</title>
+        <!-- Tailwind CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- 你的样式 -->
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+</head>
+
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+    <!-- Navbar -->
+    <header class="bg-gray-8">
+        <div class="px-10 flex justify-between items-center py-4">
+            <!-- flex ：让 <h1> 变成弹性盒模型容器，默认主轴是水平，子元素（图标+文字）会在一行排开 -->
+            <h1
+                class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 drop-shadow-[0_2px_6px_rgba(255,255,255,0.3)] text-center">
+                <!-- <img src="assets/icons8-summer-50.png" alt="icon" class="h-6 w-6  " /> -->
+                PlayMeow
+            </h1>
+            <nav class="space-x-6">
+                <a href="#"
+                    class="hover:text-indigo-300 bg-pink-700 hover:bg-pink-900 text-white px-6 py-2 rounded-lg shadow transition transform hover:scale-125 cursor-pointer">首頁</a>
+                <a href="#"
+                    class="hover:text-indigo-300 bg-pink-700 hover:bg-pink-900 text-white px-6 py-2 rounded-lg shadow transition transform hover:scale-125 cursor-pointer">遊戲庫</a>
+                <a href="#"
+                    class="hover:text-indigo-300 bg-pink-700 hover:bg-pink-900 text-white px-6 py-2 rounded-lg shadow transition transform hover:scale-125 cursor-pointer">關於</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 跳转區 -->
+    <section class="relative h-96">
+        <img src="assets/1.png" alt="喵咪地獄 封面" class="w-full h-full object-cover opacity-40" />
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/90 flex flex-col justify-end p-10">
+            <h2 class="text-5xl font-extrabold mb-2 text-pink-400">喵咪修仙傳</h2>
+            <p class="max-w-2xl text-gray-300 mb-4">在地獄深淵甦醒的貓魂，揭開自己的命運並踏上救贖旅程。</p>
+            <div class="flex space-x-4">
+                <button
+                    class="btn-primary bg-pink-500 hover:bg-pink-700 text-white px-6 py-2 rounded-lg shadow transition transform hover:scale-125 cursor-pointer"
+                    onclick="window.location.href='http://127.0.0.1:5500/games.html'">立即遊玩</button>
+                <button
+                    class="btn-secondary bg-pink-500 hover:bg-pink-700 text-white px-6 py-2 rounded-lg shadow transition transform hover:scale-125 cursor-pointer">加入願望清單</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info & Stats Strip -->
+    <section class="bg-gray-800 py-3">
+        <div class="container flex space-x-8 text-gray-400 text-sm">
+            <div>類型：動作 / 冒險</div>
+            <div>發行日期：2025‑07‑01</div>
+            <div>開發者：喵咪工作室</div>
+            <div>語言：多國語系（含繁中）</div>
+        </div>
+    </section>
+
+    <!-- 遊戲介紹 展示区 -->
+    <section class="bg-gray-800 rounded-lg p-4 my-8 shadow-lg max-w-[1000px] mx-auto">
+        <h3 class="text-2xl font-semibold mb-4">遊戲介紹</h3>
+        <p class="mb-4 text-gray-300">
+            扮演甦醒於地獄的貓魂，在惡魔與回憶交織的場景中穿梭…
+        </p>
+
+        <!-- 轮播容器 -->
+        <div class="relative w-full max-w-4xl mx-auto">
+            <!-- 图片列表 -->
+            <div id="carousel-images" class="overflow-hidden rounded-lg shadow relative h-[500px]">
+                <img src="assets/game1.jpg" alt="遊戲畫面1"
+                    class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 opacity-100" />
+                <img src="assets/game2.png" alt="遊戲畫面2"
+                    class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 opacity-0" />
+                <img src="assets/1.png" alt="遊戲畫面3"
+                    class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 opacity-0" />
+            </div>
+
+            <!-- 左右按钮 -->
+            <button id="prev-btn"
+                class="absolute top-1/2 left-2 -translate-y-1/2 bg-gray-700 bg-opacity-50 hover:bg-opacity-80 text-white rounded-full p-2 focus:outline-none z-10 w-[30px] h-[80px]">
+                &#10094;
+            </button>
+            <button id="next-btn"
+                class="absolute top-1/2 right-2 -translate-y-1/2 bg-gray-700 bg-opacity-50 hover:bg-opacity-80 text-white rounded-full p-2 focus:outline-none z-10  w-[30px] h-[80px]">
+                &#10095;
+            </button>
+
+            <!-- 小圆点导航 -->
+            <div id="carousel-dots" class="flex justify-center space-x-3 mt-4">
+                <button class="w-3 h-3 rounded-full bg-gray-400 focus:outline-none"></button>
+                <button class="w-3 h-3 rounded-full bg-gray-400 focus:outline-none"></button>
+                <button class="w-3 h-3 rounded-full bg-gray-400 focus:outline-none"></button>
+            </div>
+        </div>
+
+        <p class="mt-4 text-gray-300">探索未知深淵、解鎖超能力、與靈魂交互。</p>
+    </section>
+
+    <!-- 推薦遊戲 -->
+    <section class="container my-8">
+        <h3 class="text-2xl font-semibold mb-6 text-center">推薦遊戲</h3>
+
+        <!-- 外框：限制可見卡片數量 -->
+        <div class="relative overflow-hidden">
+            <!-- 滑动容器 -->
+            <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out">
+                <!-- 每個卡片 -->
+                <div class="min-w-[25%] px-1">
+                    <div
+                        class="bg-gray-700 rounded-xl shadow hover:scale-105 transition-transform duration-300 overflow-hidden h-full flex flex-col">
+                        <img src="assets/screen1.jpg.jpg" class="w-full h-40 object-cover" />
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <h4 class="font-bold text-lg text-white">喵咪修仙傳</h4>
+                            <p class="text-gray-400 text-sm mt-1">修煉 · 冒險</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="min-w-[25%] px-1">
+                    <div
+                        class="bg-gray-700 rounded-xl shadow hover:scale-105 transition-transform duration-300 overflow-hidden h-full flex flex-col">
+                        <img src="assets/game2.png" class="w-full h-40 object-cover" />
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <h4 class="font-bold text-lg text-white">喵咪修仙傳</h4>
+                            <p class="text-gray-400 text-sm mt-1">修煉 · 冒險</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="min-w-[25%] px-1">
+                    <div
+                        class="bg-gray-700 rounded-xl shadow hover:scale-105 transition-transform duration-300 overflow-hidden h-full flex flex-col">
+                        <img src="assets/1.png" class="w-full h-40 object-cover" />
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <h4 class="font-bold text-lg text-white">喵咪修仙傳</h4>
+                            <p class="text-gray-400 text-sm mt-1">修煉 · 冒險</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="min-w-[25%] px-1">
+                    <div
+                        class="bg-gray-700 rounded-xl shadow hover:scale-105 transition-transform duration-300 overflow-hidden h-full flex flex-col">
+                        <img src="assets/game1.jpg" class="w-full h-40 object-cover" />
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <h4 class="font-bold text-lg text-white">喵咪修仙傳</h4>
+                            <p class="text-gray-400 text-sm mt-1">修煉 · 冒險</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="min-w-[25%] px-1">
+                    <div
+                        class="bg-gray-700 rounded-xl shadow hover:scale-105 transition-transform duration-300 overflow-hidden h-full flex flex-col">
+                        <img src="assets/1.png" class="w-full h-40 object-cover" />
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <h4 class="font-bold text-lg text-white">喵咪修仙傳</h4>
+                            <p class="text-gray-400 text-sm mt-1">修煉 · 冒險</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 左右切换按钮 -->
+            <button onclick="prevSlide()"
+                class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-3 py-1 rounded">‹</button>
+            <button onclick="nextSlide()"
+                class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white px-3 py-1 rounded">›</button>
+        </div>
+    </section>
+
+ <!-- 顶部介绍轮播逻辑 -->
+<script>
+  const introImages = document.querySelectorAll('#carousel-images img');
+  const introDots = document.querySelectorAll('#carousel-dots button');
+  const introPrevBtn = document.getElementById('prev-btn');
+  const introNextBtn = document.getElementById('next-btn');
+  let introCurrent = 0;
+  let introInterval = null;
+
+  function updateIntroCarousel(index) {
+    introImages.forEach((img, i) => {
+      img.style.opacity = i === index ? '1' : '0';
+      img.style.zIndex = i === index ? '10' : '1';
+    });
+
+    introDots.forEach((dot, i) => {
+      dot.classList.toggle('bg-pink-500', i === index);
+      dot.classList.toggle('bg-gray-400', i !== index);
+    });
+
+    introCurrent = index;
+  }
+
+  function introNextImage() {
+    let next = (introCurrent + 1) % introImages.length;
+    updateIntroCarousel(next);
+  }
+
+  function introPrevImage() {
+    let prev = (introCurrent - 1 + introImages.length) % introImages.length;
+    updateIntroCarousel(prev);
+  }
+
+  introPrevBtn.addEventListener('click', () => {
+    introPrevImage();
+    resetIntroInterval();
+  });
+
+  introNextBtn.addEventListener('click', () => {
+    introNextImage();
+    resetIntroInterval();
+  });
+
+  introDots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      updateIntroCarousel(i);
+      resetIntroInterval();
+    });
+  });
+
+  function startIntroInterval() {
+    introInterval = setInterval(introNextImage, 4000);
+  }
+
+  function resetIntroInterval() {
+    clearInterval(introInterval);
+    startIntroInterval();
+  }
+
+  updateIntroCarousel(0);
+  startIntroInterval();
+</script>
+
+<!-- 推荐卡片轮播逻辑 -->
+<script>
+  let cardIndex = 0;
+  const cardTrack = document.getElementById('carousel-track');
+  const totalCardCount = cardTrack.children.length;
+  const cardsVisible = 4;
+
+  function updateCardCarousel() {
+    const percent = -(100 / cardsVisible) * cardIndex;
+    cardTrack.style.transform = `translateX(${percent}%)`;
+  }
+
+  function prevSlide() {
+    cardIndex = Math.max(0, cardIndex - 1);
+    updateCardCarousel();
+  }
+
+  function nextSlide() {
+    if (cardIndex < totalCardCount - cardsVisible) {
+      cardIndex++;
+      updateCardCarousel();
+    }
+  }
+</script>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6">
+        <div class="container text-gray-500 text-sm text-center">
+            © 2025 PlayMeow. 保留所有權利。
+        </div>
+    </footer>
+
+</body>
+
+</html>
