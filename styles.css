@@ -1,0 +1,48 @@
+:root {
+  --primary: #6366f1;
+  --primary-dark: #6f69d8;
+  --card-bg: #1e293b;
+}
+
+/* Container 最大寬度 */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 按鈕樣式 */
+.btn-primary {
+  @apply px-6 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-lg font-semibold transition;
+}
+.btn-secondary {
+  @apply px-6 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-gray-200 text-lg font-semibold transition;
+}
+
+/* 卡片樣式 */
+.card {
+  @apply bg-var(--card-bg) rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition;
+}
+.card-img {
+  @apply w-full h-40 object-cover;
+}
+.card-body {
+  @apply p-4;
+}
+
+/* Info strip 字體 */
+.info-item {
+  @apply text-gray-400 text-sm;
+}
+.glass-title {
+  font-size: 4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffffff 0%, #d1d5db 30%, #ffffff 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+  .font-pixel {
+    font-family: 'Press Start 2P', monospace;
+  }
